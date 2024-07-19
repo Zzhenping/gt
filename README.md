@@ -5,7 +5,9 @@ git-tools 是一个用于帮助我们快速切换到一个随机分支名的工�
 ### 安装
 
 ```shell
+git clone https://github.com/Zzhenping/gt.git
 
+将 /pwd/gt/bin/ 添加到环境变量
 ```
 
 
