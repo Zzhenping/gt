@@ -4,16 +4,8 @@
 #include "help.h"
 
 std::map<std::string, std::string> cmdlib = {
-        {"--framework"," Specify the framework version"},
-        {"--model"," Specify the model file path"},
-        {"--input_format"," Specify the input format"},
-        {"--input_shape"," Specify the input shape"},
-        {"--output_type"," Specify the output type"},
-        {"--output"," Specify the output file path"},
-        {"--log"," Specify the log level"},
-        {"--precision_mode"," Specify the precision mode"},
-        {"--soc_version"," Specify the SoC version"},
-        {"--help","Display this help and exit"}
+        {" -n  --name"," Switch to the specified branch"},
+        {" -h  --help"," Display this help and exit"}
 };
 
 void displayHelp() {

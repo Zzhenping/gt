@@ -7,4 +7,4 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
 
-add_executable(gt ${SOURCES} src/main.cpp include/help.h src/help.cpp include/utils.h src/utils.cpp include/gt.h src/gt.cpp)
+add_executable(gt ${SOURCES} src/main.cpp include/help.h src/help.cpp include/utils.h src/utils.cpp include/gt.h src/gt.cpp include/arguments.h src/arguments.cpp)
