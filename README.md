@@ -32,9 +32,17 @@ gt.exe --help
 
 ```shell
 Options:
+ -c  --chore                   Create a chore prefix in minutes
+ -d  --docs                    Create a docs prefix in minutes
+ -f  --feat                    Create a feature prefix in minutes
+ -fx  --fix                    Create a fix prefix in minutes
  -h  --help                    Display this help and exit
  -n  --name                    Switch to the specified branch
-
+ -p  --perf                    Create a perf prefix in minutes
+ -r  --refactor                Create a refactor prefix in minutes
+ -s  --style                   Create a style prefix in minutes
+ -t  --test                    Create a test prefix in minutes
+ -v  --version                 Create a version prefix in minutes 
 ```
 
 
