@@ -11,5 +11,6 @@ bool isGitBranchExists(const std::string& branchName);
 bool switchGitBranch(const std::string& branchName);
 bool hasUncommittedChanges();
 bool beforeSwitchingCheck();
+void handleBranchSwitch(const std::string& prefix);
 
 #endif //GIT_TOOLS_GT_H

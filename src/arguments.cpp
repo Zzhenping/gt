@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <unordered_map>
 #include "gt.h"
 #include "arguments.h"
 #include "help.h"
@@ -41,7 +42,25 @@ int parsingArguments(int argc, char* argv[]){
         return 1;
     }
 
+    std::unordered_map<std::string, std::string> branchMap = {
+            {"--feat", "feat:"}, {"-f", "feat:"},
+            {"--fix", "fix:"}, {"-fx", "fix:"},
+            {"--perf", "perf:"}, {"-p", "perf:"},
+            {"--docs", "docs:"}, {"-d", "docs:"},
+            {"--style", "style:"}, {"-s", "style:"},
+            {"--refactor", "refactor:"}, {"-r", "refactor:"},
+            {"--test", "test:"}, {"-t", "test:"},
+            {"--version", "version:"}, {"-v", "version:"},
+            {"--chore", "chore:"}, {"-c", "chore:"}
+    };
 
+    std::string arg = argv[1];
+    for (const auto& entry : branchMap) {
+        if (arg.find(entry.first) != std::string::npos) {
+            handleBranchSwitch(entry.second);
+            return 1;
+        }
+    }
 
     return 0;
 }
