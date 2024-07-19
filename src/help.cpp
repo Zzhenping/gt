@@ -1,6 +1,7 @@
-#include <iostream>
-#include <map>
-
+//
+// Created by MLoong on 2024/7/19.
+//
+#include "help.h"
 
 std::map<std::string, std::string> cmdlib = {
         {"--framework"," Specify the framework version"},
@@ -15,24 +16,10 @@ std::map<std::string, std::string> cmdlib = {
         {"--help","Display this help and exit"}
 };
 
-void displayHelp()
-{
+void displayHelp() {
     std::cout << "Usage: command [options]\n"
               << "Options:\n";
-    for (const auto& p : cmdlib)
-    {
+    for (const auto& p : cmdlib) {
         printf("%-30s%-50s\n", p.first.c_str(), p.second.c_str());
     }
-}
-
-int main(int argc, char* argv[]) {
-
-    if (argc == 2 && std::string(argv[1]).find("--help") != std::string::npos) {
-        displayHelp();
-        return 0;
-    }
-
-    // 使用system()函数执行Git命令
-    system("git --version");
-    return 0;
 }

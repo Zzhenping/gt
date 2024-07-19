@@ -3,4 +3,8 @@ project(git_tools)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(git_tools main.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
+
+add_executable(gt ${SOURCES} src/main.cpp include/help.h src/help.cpp include/utils.h src/utils.cpp include/gt.h src/gt.cpp)
