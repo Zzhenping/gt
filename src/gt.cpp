@@ -54,3 +54,10 @@ bool beforeSwitchingCheck() {
     }
     return true;
 }
+
+void handleBranchSwitch(const std::string& prefix) {
+    std::string tmp_branch_name = prefix + generateRandomBranchName();
+    if (beforeSwitchingCheck()) {
+        switchGitBranch(tmp_branch_name);
+    }
+}
