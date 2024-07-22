@@ -10,10 +10,18 @@
 #include <random>
 #include "gt.h"
 
+#ifdef _WIN32
+    #define POPEN _popen
+    #define PCLOSE _pclose
+#else
+    #define POPEN popen
+    #define PCLOSE pclose
+#endif
+
 std::string executeCommand(const char* cmd) {
     std::array<char, 128> buffer{};
     std::string result;
-    std::unique_ptr<FILE, decltype(&_pclose)> pipe(_popen(cmd, "r"), _pclose);
+    std::unique_ptr<FILE, decltype(&PCLOSE)> pipe(POPEN(cmd, "r"), PCLOSE);
     if (!pipe) {
         throw std::runtime_error("popen() failed!");
     }
