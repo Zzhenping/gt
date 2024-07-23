@@ -43,7 +43,7 @@ bool hasUncommittedChanges() {
 
 bool beforeSwitchingCheck() {
     if (!hasUncommittedChanges()) {
-        return false;
+        return true;
     }
     std::cout << "There are uncommitted changes in the repository." << std::endl;
     char choice;
